@@ -24,10 +24,10 @@
                 </button>
                 <!-- Desktop Nav links-->
                 <div class="hidden md:flex items-center space-x-6">
-                    <a href="{{ url('/') }}">Home</a>
-                    <a href="{{ url('about') }}">About</a>
-                    <a href="{{ url('contact') }}">Contact</a>
-                    <a href="{{ url('userprotected') }}">Registered Users Only</a>
+                    <li class="{{ set_active('/') }}"><a href="{{ url('/') }}">Home</a></li>
+                    <li class="{{ set_active('about') }}"> <a href="{{ url('about') }}">About</a></li>
+                    <li class="{{ set_active('contact') }}"><a href="{{ url('contact') }}">Contact</a></li>
+                    <li class="{{ set_active('userprotected') }}"><a href="{{ url('userprotected') }}">Registered Users Only</a></li>
                 </div>
 
                 <!--Auth Links -->
@@ -42,7 +42,7 @@
     </header>
     <main>
         <div>
-
+            @yield('content')
         </div>
     </main>
     <footer  class="mt-12 bg-white border-t py-6 text-center text-gray-400 text-sm">
