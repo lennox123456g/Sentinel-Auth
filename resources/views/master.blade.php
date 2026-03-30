@@ -8,12 +8,12 @@
     <link rel="shortcut icon" href="img/favicon.ico">
     @vite(['resources/css/app.css','resources/js/app.js'])
 </head>
-<body class="bg-gray-100 min-h-screen">
+<body class="bg-gray-100 min-h-screen flex flex-col">
     <!-- navbar-->
     <header class=" flex bg-white shadow">
-        <nav class=" max-w-7xl px-4 sm:px-s lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <a href="{{ url('/') }}" class="text-xl font-bold text-indigo-600 hover:text-indigo-800"> Sentil Auth</a>
+        <nav class="px-4 sm:px-s lg:px-8 justify-between w-full ">
+            <div class="flex justify-between items-center h-16 space-x-6">
+                <a href="{{ url('/') }}" class="md:hidden text-xl font-bold text-indigo-600 hover:text-indigo-800 "> Sentil Auth</a>
             
 
                 <button class="md:hidden text-gray-500 hover:text-gray-700 focus:outline-none">
@@ -23,15 +23,23 @@
                     </svg>  
                 </button>
                 <!-- Desktop Nav links-->
-                <div class="hidden md:flex items-center space-x-6">
-                    <li class="{{ set_active('/') }}"><a href="{{ url('/') }}">Home</a></li>
-                    <li class="{{ set_active('about') }}"> <a href="{{ url('about') }}">About</a></li>
-                    <li class="{{ set_active('contact') }}"><a href="{{ url('contact') }}">Contact</a></li>
-                    <li class="{{ set_active('userprotected') }}"><a href="{{ url('userprotected') }}">Registered Users Only</a></li>
-                </div>
+                <div class="flex items-center gap-8 xl:gap-12">
+                    <div class="{{ set_active('/') }}">
+                        <a href="{{ url('/') }}" class="relative text-sm font-medium tracking-wide text-gray-600 hover:text-indigo-600 transition-colors duration-200 after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-indigo-600 after:transition-all after:duration-300 hover:after:w-full">Home</a>
+                    </div>
+                    <div class="{{ set_active('about') }}">
+                        <a href="{{ url('about') }}" class="relative text-sm font-medium tracking-wide text-gray-600 hover:text-indigo-600 transition-colors duration-200 after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-indigo-600 after:transition-all after:duration-300 hover:after:w-full">About</a>
+                    </div>
+                    <div class="{{ set_active('contact') }}">
+                        <a href="{{ url('contact') }}" class="relative text-sm font-medium tracking-wide text-gray-600 hover:text-indigo-600 transition-colors duration-200 after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-indigo-600 after:transition-all after:duration-300 hover:after:w-full">Contact</a>
+                    </div>
+                    <div class="{{ set_active('userprotected') }}">
+                        <a href="{{ url('userprotected') }}" class="relative text-sm font-medium tracking-wide text-gray-600 hover:text-indigo-600 transition-colors duration-200 after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-indigo-600 after:transition-all after:duration-300 hover:after:w-full">Registered Users Only</a>
+                    </div>
+                </div> 
 
                 <!--Auth Links -->
-                <div class="hidden md:flex items-center space-x-4">
+                <div class="hidden md:flex items-center justify-end space-x-6">
                     <a href="{{ url('register') }}" class="text-gray-600 hover:text=indigo-600 font-medium transition">Register</a>
                     <a href="{{ url('login') }}" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition font-medium">Login</a>
                     <a href="{{ url('profiles') }}" class="text-gray-600 hover:text-indigo-600 font-medium transition">My Profile</a>
