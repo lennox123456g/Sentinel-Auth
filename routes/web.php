@@ -13,7 +13,7 @@ Route::controller(PagesController::class)->group(function() {
 
 
 #Registration
-Route::controller( RegistrationController::class)-> group(function(){
+Route::controller(RegistrationController::class)->group(function(){
     Route::get('register', 'index');
-    Route::post('register', 'store');
+    Route::post('register', 'store')->name('registration.store');
 });

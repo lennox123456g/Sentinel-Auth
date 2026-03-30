@@ -40,7 +40,7 @@
 
                 <!--Auth Links -->
                 <div class="hidden md:flex items-center justify-end space-x-6">
-                    <a href="{{ url('register') }}" class="text-gray-600 hover:text=indigo-600 font-medium transition">Register</a>
+                    <a href="{{ url('/register') }}" class="text-gray-600 hover:text=indigo-600 font-medium transition">Register</a>
                     <a href="{{ url('login') }}" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition font-medium">Login</a>
                     <a href="{{ url('profiles') }}" class="text-gray-600 hover:text-indigo-600 font-medium transition">My Profile</a>
                     <a href="{{ url('logout') }}" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition font-medium">Logout</a>
@@ -53,7 +53,7 @@
             @yield('content')
         </div>
     </main>
-    <footer  class="mt-12 bg-white border-t py-6 text-center text-gray-400 text-sm">
+    <footer  class=" bg-white border-t py-6 text-center text-gray-400 text-sm">
         &copy; {{ date('Y') }}  My-Sentinel Auth. All rights reserved.
     </footer>
 
