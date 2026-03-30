@@ -14,6 +14,6 @@ Route::controller(PagesController::class)->group(function() {
 
 #Registration
 Route::controller( RegistrationController::class)-> group(function(){
-    Route::get('register');
+    Route::get('register', 'index');
     Route::post('register', 'store');
 });
