@@ -20,6 +20,6 @@ class RegistrationController extends Controller
 
         $user = Sentinel::registerAndActivate($input);
 
-        return redirect()->route('login')->with('flash_message', 'Account created! Please login.');
+        return redirect('/login')->with('flash_message', 'Account created!');
     }
 }
